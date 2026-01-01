@@ -32,6 +32,9 @@ jobs:
       - name: Clean previous build
         run: rm -rf dist
 
+      - name: Clean .astro
+        run: rm -rf .astro
+
       - name: Build Astro
         run: npm run build
 
