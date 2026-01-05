@@ -22,6 +22,25 @@ const formatDate = (date: Date) => {
 
 const startFormatted = formatDate(startDate);
 const endFormatted = current ? 'Present' : endDate ? formatDate(endDate) : 'Present';
+
+const calculateDuration = () => {
+  const end = current || !endDate ? new Date() : endDate;
+  const months = Math.round(
+      (end.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30)
+  );
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+
+  if (years === 0) {
+    return `${months} ${months === 1 ? 'month' : 'months'}`;
+  } else if (remainingMonths === 0) {
+    return `${years} ${years === 1 ? 'year' : 'years'}`;
+  } else {
+    return `${years} ${years === 1 ? 'year' : 'years'}, ${remainingMonths} ${remainingMonths === 1 ? 'month' : 'months'}`;
+  }
+};
+
+const duration = calculateDuration();
 ---
 
 <article class="card">
@@ -47,14 +66,14 @@ const endFormatted = current ? 'Present' : endDate ? formatDate(endDate) : 'Pres
     <div class="flex items-center gap-2 mb-2 flex-wrap">
       <time
         datetime={startDate.toISOString()}
-        class="font-mono text-base text-tertiary"
+        class="font-mono"
       >
         {startFormatted}
       </time>
       <span class="font-mono text-xs text-tertiary">-</span>
       <time
         datetime={endDate?.toISOString() || new Date().toISOString()}
-        class="font-mono text-base text-tertiary"
+        class="font-mono"
       >
         {endFormatted}
       </time>
@@ -63,10 +82,21 @@ const endFormatted = current ? 'Present' : endDate ? formatDate(endDate) : 'Pres
           Current
         </span>
       )}
+      <span>•</span>
+      <span class="font-mono text-base text-tertiary">{duration}</span>
     </div>
 
     <p class="font-sans text-md text-secondary leading-normal line-clamp-3">
       {description}
     </p>
+    <a
+        href={`/experience/${slug}`}
+        class="flex items-center gap-2 font-mono text-xs text-accent hover:opacity-80 transition-opacity ml-auto"
+    >
+      Details
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
   </a>
 </article>

@@ -27,8 +27,7 @@ As a Software Engineer, my primary focus is on backend microservices that power 
     - Contributed as a core member of one of the organization’s early Agentic AI teams, working on innovative, product focused AI solutions.
     - Built AI agents, reusable skills, and MCP servers as part of an innovation project to accelerate internal feature development using Claude Code, while adhering to enterprise processes, test coverage standards, and quality benchmarks.
     - Worked on an Agentic AI workflow that helps analyze existing business processes and improve them
-    - Completed an intensive 3-day hands-on training in React.js, strengthening frontend development capabilities.
-    - Completed a focused 3-day training on software and UI design principles, improving overall product quality and developer experience.
+    - Attended hands-on workshop on React.js and software design principles to improve overall development quality and product experience.
 
 Promoted to **Software Engineer II** at the end of 2025 in recognition of consistent, impactful contributions made from the time of joining.
 

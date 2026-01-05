@@ -2,7 +2,7 @@
 title: "Software Engineer Internship"
 company: "Software AG"
 role: "Software Engineer Internship"
-startDate: 2023-06-19
+startDate: 2023-07-17
 endDate: 2024-06-02
 current: false
 description: ""
